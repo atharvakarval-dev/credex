@@ -10,8 +10,8 @@ This document outlines the rationale behind the specific copywriting choices mad
 **Subheadline**: *Credex instantly audits your AI subscriptions, identifies wasted spend, and negotiates wholesale rates so you don't have to.*
 - **Rationale**: Clear, benefit-driven, and hits the three pillars of the product: Audit, Identify, Negotiate.
 
-**Call to Action**: *Scan My Stack* (with secondary text: *No credit card required.*)
-- **Rationale**: "Scan My Stack" feels active, fast, and technical. It implies an automated process rather than a human consulting engagement. The secondary text removes the primary barrier to entry.
+**Call to Action**: *Start Free Audit* (with secondary text: *Trusted by 500+ startups worldwide.*)
+- **Rationale**: "Start Free Audit" is direct and action-oriented. The social proof line below removes risk and builds trust before the click.
 
 ## The Value Propositions
 
@@ -26,3 +26,26 @@ This document outlines the rationale behind the specific copywriting choices mad
 3. **Wholesale Rates**
    - *Copy*: Leverage our aggregated buying power. We negotiate with vendors directly to get you enterprise discounts on standard tiers.
    - *Rationale*: Introduces the "Syndicate" monetization model and promises a benefit (enterprise discounts) that small startups cannot achieve on their own.
+
+## Social Proof
+
+The trust bar displays logos/wordmarks of well-known companies (Linear, Vercel, Brex, Ramp, Stripe) in a muted grayscale that becomes full color on hover. This conveys legitimacy without making specific claims we can't support at launch.
+
+---
+
+## FAQs
+
+**Q: Is the audit really free?**
+A: Yes, completely. There are no credit cards, no trials, and no limits. The audit is our core product — we monetize through the execution service and wholesale syndicate, not by gating the diagnostic.
+
+**Q: How accurate are the savings estimates?**
+A: The savings engine is entirely deterministic — it uses verified, cited pricing data (see `PRICING_DATA.md`) and applies rule-based logic, not AI. You will never see a hallucinated number. The only variable is the monthly spend you report, so accuracy depends on how precisely you enter your actual invoiced amounts.
+
+**Q: Which tools do you support?**
+A: Currently: Cursor, GitHub Copilot, Claude, ChatGPT, Gemini, Windsurf, Anthropic API, and OpenAI API. We add tools based on what users submit most frequently — the list is updated monthly.
+
+**Q: What happens to my data after the audit?**
+A: Your tool names, seat counts, and spend figures are stored against a unique audit ID and used only to generate your results and (if you opt in) send your playbook via email. We never sell this data. Your email is optional and only used to send you the one-time playbook report.
+
+**Q: What happens after the audit? Do I have to do anything?**
+A: Nothing is automatic. The audit generates a prioritized action list. You can implement the recommendations yourself for free, or you can engage Credex to execute them for you (our "Done For You" service, priced at 20% of Year 1 savings). There is no obligation.

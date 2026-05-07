@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { Plus, ArrowRight, Loader2, Users, Target, Activity, LayoutGrid } from "lucide-react";
+import { Plus, ArrowRight, Loader2, Users, Target, LayoutGrid } from "lucide-react";
 import { auditInputSchema, ValidatedAuditInput } from "../../lib/validations";
 import { saveFormState, loadFormState, clearFormState } from "../../lib/storage";
 import { ToolRow } from "./ToolRow";
@@ -13,7 +13,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Building2, ShieldCheck, Sparkles } from "lucide-react";
+import { Mail, Building2, ShieldCheck, Sparkles, User } from "lucide-react";
 
 export function AuditForm() {
   const router = useRouter();
@@ -21,7 +21,7 @@ export function AuditForm() {
   const [showLeadDialog, setShowLeadDialog] = useState(false);
   const [pendingAuditId, setPendingAuditId] = useState<string | null>(null);
   const [isCapturingLead, setIsCapturingLead] = useState(false);
-  const [leadForm, setLeadForm] = useState({ email: "", companyName: "" });
+  const [leadForm, setLeadForm] = useState({ name: "", email: "", companyName: "", role: "" });
 
   const form = useForm<ValidatedAuditInput>({
     resolver: zodResolver(auditInputSchema),
@@ -40,6 +40,25 @@ export function AuditForm() {
     control,
     name: "tools",
   });
+
+  // Load persisted form state on mount
+  useEffect(() => {
+    const saved = loadFormState();
+    if (saved) {
+      if (saved.teamSize !== undefined) setValue("teamSize", saved.teamSize);
+      if (saved.useCase !== undefined) setValue("useCase", saved.useCase);
+      if (saved.tools && saved.tools.length > 0) setValue("tools", saved.tools as ValidatedAuditInput["tools"]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Save form state to localStorage on every change
+  useEffect(() => {
+    const subscription = form.watch((values) => {
+      saveFormState(values as Partial<ValidatedAuditInput>);
+    });
+    return () => subscription.unsubscribe();
+  }, [form]);
 
   const onSubmit = async (data: ValidatedAuditInput) => {
     if (isSubmitting) return;
@@ -74,8 +93,10 @@ export function AuditForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           auditId: pendingAuditId,
+          name: leadForm.name,
           email: leadForm.email,
           companyName: leadForm.companyName,
+          role: leadForm.role,
         }),
       });
 
@@ -240,11 +261,28 @@ export function AuditForm() {
 
             <form onSubmit={onLeadSubmit} className="space-y-6">
               <div className="space-y-4">
+
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Business Email</Label>
+                  <Label htmlFor="lead-name" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Your Name</Label>
+                  <div className="relative">
+                    <Input
+                      id="lead-name"
+                      type="text"
+                      required
+                      placeholder="Alex Johnson"
+                      value={leadForm.name}
+                      onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
+                      className="bg-white/5 border-white/10 h-12 rounded-xl pl-12 focus:ring-1 focus:ring-[#E1E0CC]/20 transition-all text-sm font-medium"
+                    />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#E1E0CC]/20" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="lead-email" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Business Email</Label>
                   <div className="relative">
                     <Input 
-                      id="email"
+                      id="lead-email"
                       type="email"
                       required
                       placeholder="name@company.com"
@@ -257,10 +295,10 @@ export function AuditForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="company" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Company Name</Label>
+                  <Label htmlFor="lead-company" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Company Name</Label>
                   <div className="relative">
                     <Input 
-                      id="company"
+                      id="lead-company"
                       type="text"
                       placeholder="Acme Corp"
                       value={leadForm.companyName}
@@ -270,6 +308,29 @@ export function AuditForm() {
                     <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#E1E0CC]/20" />
                   </div>
                 </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="lead-role" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Your Role</Label>
+                  <Select
+                    value={leadForm.role}
+                    onValueChange={(val) => setLeadForm({ ...leadForm, role: val })}
+                  >
+                    <SelectTrigger
+                      id="lead-role"
+                      className="h-12 bg-white/5 border-white/10 rounded-xl px-4 text-sm font-medium text-[#E1E0CC] hover:bg-white/10 transition-all"
+                    >
+                      <SelectValue placeholder="Select your role" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-black border-white/20 text-[#E1E0CC] rounded-2xl backdrop-blur-3xl shadow-[0_10px_40px_rgba(0,0,0,0.8)] border-[1.5px]">
+                      <SelectItem value="founder" className="py-3 px-5 rounded-xl font-bold cursor-pointer focus:bg-[#E1E0CC] focus:text-black">Founder / CEO</SelectItem>
+                      <SelectItem value="cto" className="py-3 px-5 rounded-xl font-bold cursor-pointer focus:bg-[#E1E0CC] focus:text-black">CTO / VP Engineering</SelectItem>
+                      <SelectItem value="finance" className="py-3 px-5 rounded-xl font-bold cursor-pointer focus:bg-[#E1E0CC] focus:text-black">Finance / CFO</SelectItem>
+                      <SelectItem value="engineering_lead" className="py-3 px-5 rounded-xl font-bold cursor-pointer focus:bg-[#E1E0CC] focus:text-black">Engineering Lead</SelectItem>
+                      <SelectItem value="individual" className="py-3 px-5 rounded-xl font-bold cursor-pointer focus:bg-[#E1E0CC] focus:text-black">Individual Contributor</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
               </div>
 
               <button

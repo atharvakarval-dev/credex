@@ -1,6 +1,16 @@
 # Credex Key Performance Indicators (Metrics)
 
-To measure the success of the Credex AI Spend Audit platform post-launch, we will track the following core metrics.
+## 0. North Star Metric
+
+**Weekly Audits Completed**
+
+This is the single number that best captures whether the product is delivering value and growing. An audit completion means a founder or engineering manager has invested 2 minutes and received a personalized savings number. Every downstream metric (lead capture rate, viral K-factor, consultation bookings) is a function of audit completions. If this number grows week-over-week, everything else follows.
+
+- **Target (Week 1)**: 100 audits/week
+- **Target (Month 3)**: 1,000 audits/week
+- **Leading indicator**: Landing page → Audit page CTR (target > 20%)
+
+---
 
 ## 1. Top of Funnel (Acquisition)
 - **Audit Completion Rate**: `(Completed Audits / Landing Page Views) * 100`
@@ -22,3 +32,28 @@ To measure the success of the Credex AI Spend Audit platform post-launch, we wil
   - *Why*: If users don't act on the playbook, they won't pay us to do it for them.
 - **Conversion to Syndicate**: Percentage of audited users who sign up for the $99/mo wholesale reseller tier.
   - *Target*: 3-5% of qualified leads.
+
+---
+
+## 4. Instrumentation Plan
+
+**Analytics Platform**: [PostHog](https://posthog.com) — open-source, self-hostable, free tier covers MVP volume.
+
+**Events to Track**:
+
+| Event Name | Trigger | Properties |
+|---|---|---|
+| `audit_started` | User lands on `/audit` | `{ referrer, utm_source }` |
+| `tool_added` | User clicks "Add Integration Node" | `{ tool_id, total_tools }` |
+| `audit_submitted` | `POST /api/audit` returns 200 | `{ tool_count, use_case, total_monthly_spend }` |
+| `audit_completed` | Results page renders | `{ audit_id, total_annual_savings, is_high_savings }` |
+| `lead_modal_opened` | Lead capture dialog shown | `{ audit_id, total_annual_savings }` |
+| `lead_captured` | `POST /api/leads` returns 200 | `{ audit_id, role, has_company }` |
+| `result_shared` | ShareButton clicked | `{ audit_id, method: 'clipboard' or 'native' }` |
+| `cta_clicked` | CredexCTA "Book a Call" clicked | `{ audit_id, total_annual_savings }` |
+
+**Funnels to Monitor**:
+1. Landing → Audit Form → Submission → Results → Lead Capture
+2. Results → Share → (new session via OG link) → Audit Start
+
+**Dashboards**: Weekly North Star trend, cohort lead capture rate, top referral sources by audit volume.

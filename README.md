@@ -42,5 +42,6 @@ npm test
 
 ## Screenshots
 ![Landing Page](public/screenshots/landing.png)
-![Audit Results](public/screenshots/results.png)
+![Audit Form](public/screenshots/audit.png)
 ![Lead Capture](public/screenshots/lead.png)
+![Audit Results](public/screenshots/results.png)

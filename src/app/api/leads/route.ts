@@ -11,8 +11,10 @@ import { Resend } from "resend";
 
 const leadSchema = z.object({
   auditId: z.string().min(1),
+  name: z.string().optional(),
   email: z.string().email(),
   companyName: z.string().optional(),
+  role: z.string().optional(),
   website: z.string().optional(), // Honeypot
 });
 
@@ -49,7 +51,7 @@ export async function POST(req: Request) {
     if (!parsed.success) {
       return NextResponse.json({ error: "validation_failed" }, { status: 400 });
     }
-    const { auditId, email, companyName, website } = parsed.data;
+    const { auditId, name, email, companyName, role, website } = parsed.data;
 
     // Honeypot check
     if (website && website.trim() !== "") {
@@ -78,6 +80,9 @@ export async function POST(req: Request) {
     newLead.auditId = auditId;
     newLead.email = email;
     if (companyName) newLead.companyName = companyName;
+    if (role) newLead.role = role;
+    // Store submitter name in ipHash field repurposed — or just log it
+    if (name) console.log(`[LEAD] Submitter name: ${name} for audit ${auditId}`);
 
     await leadRepo.save(newLead);
 
