@@ -7,6 +7,7 @@ import { AuditSchema } from "../../../entities/AuditSchema";
 import { Audit } from "../../../entities/Audit";
 import { generateId } from "../../../lib/utils";
 
+// POST /api/audit — validates input, runs pure engine, persists to DB, returns auditId
 export async function POST(request: Request) {
   try {
     // 1. Rate Limiting
@@ -80,3 +81,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
