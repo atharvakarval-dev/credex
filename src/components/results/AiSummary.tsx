@@ -1,3 +1,4 @@
+// AiSummary: streams executive summary from /api/summary with skeleton fallback
 "use client";
 
 import React, { useEffect } from "react";
@@ -71,3 +72,4 @@ export function AiSummary({ auditId }: AiSummaryProps) {
     </div>
   );
 }
+
