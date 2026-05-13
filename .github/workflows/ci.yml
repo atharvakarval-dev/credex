@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    env:
+      # Dummy URL for CI build/test steps that don't need a real DB
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres"
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - run: npm ci
+      
+      - name: Type check
+        run: npx tsc --noEmit
+      
+      - name: Lint
+        run: npx eslint src --ext .ts,.tsx --max-warnings 0
+      
+      - name: Run tests
+        run: npx vitest run --reporter=verbose
+      
+      - name: Build
+        run: npm run build
