@@ -1,8 +1,8 @@
-import { ToolEntry, ToolRecommendation } from "../../types/audit";
+﻿import { ToolEntry, ToolRecommendation } from "../../types/audit";
 import { AuditContext } from "./types";
 import { PRICING, TOOL_OVERLAP } from "./pricing";
 
-// Rule 1: Plan fit evaluation � checks if team plan is right-sized for seat count
+// Rule 1: Plan fit evaluation — checks if team plan is right-sized for seat count
 // e.g. Claude Team ($30/seat, min seats?) Actually Claude team is $30/seat. If they have 2 seats, that's $60. Pro is $20. 2x Pro = $40. Savings = $20.
 export function evaluatePlanFit(
   entry: ToolEntry,
@@ -116,7 +116,7 @@ export function evaluateAlternative(
   return null;
 }
 
-// Rule 5: Enterprise/Team plan for <= 2 users — almost always wasteful
+// Rule 5: Enterprise/Team plan for <= 2 users â€” almost always wasteful
 export function evaluateSeatEfficiency(
   entry: ToolEntry,
   _allEntries: ToolEntry[],
@@ -189,4 +189,5 @@ export const ALL_RULES: AuditRule[] = [
   evaluateBillingFrequency,
   evaluateSeatCleanup, // New aggressive rule
 ];
+
 

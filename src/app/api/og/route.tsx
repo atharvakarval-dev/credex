@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { getDataSource } from "../../../lib/db";
 import { Audit } from "../../../entities";
 
@@ -96,3 +96,4 @@ export async function GET(request: Request) {
     });
   }
 }
+

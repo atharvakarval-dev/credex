@@ -1,4 +1,4 @@
-// src/types/env.d.ts
+﻿// src/types/env.d.ts
 // Environment variable type declarations
 
 declare namespace NodeJS {
@@ -25,3 +25,4 @@ declare namespace NodeJS {
     NODE_ENV: 'development' | 'production' | 'test';
   }
 }
+

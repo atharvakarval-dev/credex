@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowUpRight, Globe, Shield, Activity } from "lucide-react";
@@ -87,7 +87,7 @@ export function Footer() {
 
           <div className="flex items-center gap-10">
              <div className="text-[9px] font-black uppercase tracking-[0.5em] text-[#E1E0CC]/10">
-              © {new Date().getFullYear()} Credex Entity
+              Â© {new Date().getFullYear()} Credex Entity
             </div>
             <div className="flex gap-8">
               <Link href="#" className="text-[9px] font-black uppercase tracking-[0.5em] text-[#E1E0CC]/20 hover:text-[#E1E0CC] transition-colors">Privacy_v2</Link>
@@ -100,3 +100,4 @@ export function Footer() {
     </footer>
   );
 }
+

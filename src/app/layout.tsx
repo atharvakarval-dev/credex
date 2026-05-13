@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "../components/ui/sonner";
@@ -52,3 +52,4 @@ export default function RootLayout({
     </html>
   );
 }
+

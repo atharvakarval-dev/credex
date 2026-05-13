@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useRef, useCallback } from "react"
 import createGlobe from "cobe"
@@ -333,3 +333,4 @@ export function Globe({
     </div>
   )
 }
+

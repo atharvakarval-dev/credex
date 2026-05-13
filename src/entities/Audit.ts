@@ -1,4 +1,4 @@
-import "reflect-metadata";
+﻿import "reflect-metadata";
 import { Entity, PrimaryColumn, CreateDateColumn, Column, OneToOne } from "typeorm";
 import type { Relation } from "typeorm";
 import { Lead } from "./Lead";
@@ -11,11 +11,11 @@ export class Audit {
   @CreateDateColumn()
   createdAt!: Date;
 
-  // Raw input snapshot — store as JSON so schema changes don't break old records
+  // Raw input snapshot â€” store as JSON so schema changes don't break old records
   @Column("jsonb")
   inputSnapshot!: object;
 
-  // Computed results — also JSON for same reason
+  // Computed results â€” also JSON for same reason
   @Column("jsonb")
   resultSnapshot!: object;
 
@@ -29,7 +29,8 @@ export class Audit {
   @Column()
   useCase!: string; // 'coding' | 'writing' | 'data' | 'research' | 'mixed'
 
-  // Relationship to lead (optional — audit exists before lead capture)
+  // Relationship to lead (optional â€” audit exists before lead capture)
   @OneToOne(() => Lead, (lead) => lead.audit)
   lead?: Relation<Lead>;
 }
+

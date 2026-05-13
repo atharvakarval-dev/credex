@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -71,3 +71,4 @@ export function CredexCTA({ auditId, totalAnnualSavings }: CredexCTAProps) {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-import { ToolEntry, UseCase, ToolRecommendation } from "../../types/audit";
+﻿import { ToolEntry, UseCase, ToolRecommendation } from "../../types/audit";
 
 export interface AuditContext {
   teamSize: number;
@@ -10,3 +10,4 @@ export type AuditRule = (
   allEntries: ToolEntry[],
   context: AuditContext
 ) => Partial<ToolRecommendation> | null;
+

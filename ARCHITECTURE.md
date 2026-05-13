@@ -1,4 +1,4 @@
-# Architecture & Technical Decisions
+﻿# Architecture & Technical Decisions
 
 ## 1. System Overview
 
@@ -34,3 +34,4 @@ If this were to scale to 10k audits/day, I would make the following changes:
 2. **Caching**: Implement aggressive caching of tool pricing in Redis to avoid DB hits.
 3. **Queueing**: Move the LLM summary generation to a background worker (e.g., Inngest or BullMQ) to prevent API timeouts during high traffic.
 4. **Read Replicas**: Introduce PostgreSQL read replicas for the results page, as the workload is 95% read-heavy.
+

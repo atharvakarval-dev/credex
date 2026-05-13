@@ -1,8 +1,8 @@
-import { describe, test, expect } from "vitest";
+﻿import { describe, test, expect } from "vitest";
 import { evaluatePlanFit, evaluateSeatEfficiency } from "../rules";
 import { ToolEntry } from "../../../types/audit";
 
-describe("Audit Engine — Rules", () => {
+describe("Audit Engine â€” Rules", () => {
   test("evaluatePlanFit identifies inefficient team plans", () => {
     const entry: ToolEntry = {
       toolId: "claude",
@@ -31,3 +31,4 @@ describe("Audit Engine — Rules", () => {
     expect(rec?.monthlySavings).toBeGreaterThan(0);
   });
 });
+

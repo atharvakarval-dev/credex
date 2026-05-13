@@ -1,4 +1,4 @@
-import { EntitySchema } from "typeorm";
+﻿import { EntitySchema } from "typeorm";
 import { Audit } from "./Audit";
 
 export const AuditSchema = new EntitySchema<Audit>({
@@ -38,3 +38,4 @@ export const AuditSchema = new EntitySchema<Audit>({
     },
   },
 });
+

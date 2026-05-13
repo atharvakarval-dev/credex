@@ -1,5 +1,5 @@
-// src/types/audit.ts
-// Canonical shared types — every other file imports from here.
+﻿// src/types/audit.ts
+// Canonical shared types â€” every other file imports from here.
 // Never redefine these shapes locally.
 
 export type UseCase = 'coding' | 'writing' | 'data' | 'research' | 'mixed';
@@ -14,7 +14,7 @@ export type ToolId =
   | 'gemini'
   | 'windsurf';
 
-// Maps to the pricing.ts constants — used as index keys
+// Maps to the pricing.ts constants â€” used as index keys
 export type CursorPlan    = 'hobby' | 'pro' | 'business' | 'enterprise';
 export type CopilotPlan   = 'individual' | 'business' | 'enterprise';
 export type ClaudePlan    = 'free' | 'pro' | 'max' | 'team' | 'enterprise' | 'api_direct';
@@ -22,7 +22,7 @@ export type ChatGPTPlan   = 'plus' | 'team' | 'enterprise' | 'api_direct';
 export type GeminiPlan    = 'pro' | 'ultra' | 'api';
 export type WindsurfPlan  = 'free' | 'pro' | 'team';
 
-// Union of all plan types — used for the generic form rows
+// Union of all plan types â€” used for the generic form rows
 export type AnyPlan =
   CursorPlan | CopilotPlan | ClaudePlan | ChatGPTPlan | GeminiPlan | WindsurfPlan;
 
@@ -41,7 +41,7 @@ export interface AuditInput {
   useCase:  UseCase;
 }
 
-// The "verdict" for a single tool — what the engine decided
+// The "verdict" for a single tool â€” what the engine decided
 export type RecommendationType =
   | 'downgrade_plan'       // Same vendor, cheaper plan
   | 'right_size_seats'     // Reduce seat count
@@ -75,7 +75,7 @@ export interface AuditResult {
   totalMonthlySavings:  number;
   totalAnnualSavings:   number;
 
-  // Derived flags — computed once, used throughout UI
+  // Derived flags â€” computed once, used throughout UI
   isHighSavings:    boolean;             // totalMonthlySavings > 500
   isAlreadyOptimal: boolean;             // totalMonthlySavings < 100
   hasOverlap:       boolean;             // 2+ tools with same primary use case
@@ -84,7 +84,7 @@ export interface AuditResult {
   generatedAt:      string;              // ISO timestamp
 }
 
-// API request/response shapes — keep these separate from domain types
+// API request/response shapes â€” keep these separate from domain types
 export interface RunAuditRequest  { input: AuditInput }
 export interface RunAuditResponse { result: AuditResult; auditId: string }
 
@@ -96,3 +96,4 @@ export interface CaptureLeadRequest {
   teamSize?:    number;
 }
 export interface CaptureLeadResponse { success: boolean; message: string }
+

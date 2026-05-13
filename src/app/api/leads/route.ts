@@ -79,10 +79,9 @@ export async function POST(req: Request) {
     newLead.id = generateId();
     newLead.auditId = auditId;
     newLead.email = email;
+    if (name) newLead.name = name;
     if (companyName) newLead.companyName = companyName;
     if (role) newLead.role = role;
-    // Store submitter name in ipHash field repurposed — or just log it
-    if (name) console.log(`[LEAD] Submitter name: ${name} for audit ${auditId}`);
 
     await leadRepo.save(newLead);
 
@@ -93,7 +92,7 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: "Credex Audit <audit@credex.com>",
           to: email,
-          subject: "Your AI Spend Audit Playbook 🚀",
+          subject: "Your AI Spend Audit Playbook ðŸš€",
           html: `<p>Hi there,</p><p>Thanks for running your AI spend audit. You can view your full implementation details here: <a href="https://credex.rocks/results/${auditId}">Your Playbook</a></p><p>Best,<br/>The Credex Team</p>`,
         });
       } else {
@@ -113,3 +112,4 @@ export async function POST(req: Request) {
     }, { status: 500 });
   }
 }
+

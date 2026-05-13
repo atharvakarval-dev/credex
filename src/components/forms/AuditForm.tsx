@@ -21,7 +21,12 @@ export function AuditForm() {
   const [showLeadDialog, setShowLeadDialog] = useState(false);
   const [pendingAuditId, setPendingAuditId] = useState<string | null>(null);
   const [isCapturingLead, setIsCapturingLead] = useState(false);
-  const [leadForm, setLeadForm] = useState({ name: "", email: "", companyName: "", role: "" });
+  const [leadForm, setLeadForm] = useState<{ name: string; email: string; companyName: string; role: string }>({ 
+    name: "", 
+    email: "", 
+    companyName: "", 
+    role: "" 
+  });
 
   const form = useForm<ValidatedAuditInput>({
     resolver: zodResolver(auditInputSchema),
@@ -150,7 +155,7 @@ export function AuditForm() {
           </div>
           <Select 
             value={useCase} 
-            onValueChange={(val) => setValue("useCase", val as ValidatedAuditInput["useCase"], { shouldValidate: true })}
+            onValueChange={(val) => setValue("useCase", (val || "coding") as ValidatedAuditInput["useCase"], { shouldValidate: true })}
           >
             <SelectTrigger 
               className="h-14 bg-white/5 border-white/10 rounded-xl px-6 text-sm font-bold text-[#E1E0CC] hover:bg-white/10 transition-all shadow-none ring-0"
@@ -313,7 +318,7 @@ export function AuditForm() {
                   <Label htmlFor="lead-role" className="text-[10px] font-black uppercase tracking-widest text-[#E1E0CC]/40 ml-1">Your Role</Label>
                   <Select
                     value={leadForm.role}
-                    onValueChange={(val) => setLeadForm({ ...leadForm, role: val })}
+                    onValueChange={(val) => setLeadForm({ ...leadForm, role: val || "" })}
                   >
                     <SelectTrigger
                       id="lead-role"
@@ -363,4 +368,5 @@ export function AuditForm() {
     </form>
   );
 }
+
 

@@ -1,4 +1,4 @@
-# Credex: User Interviews & Discovery
+﻿# Credex: User Interviews & Discovery
 
 During the validation phase, we spoke with 3 target customers to understand their pain points regarding SaaS and AI spend.
 
@@ -19,3 +19,4 @@ During the validation phase, we spoke with 3 target customers to understand thei
 - **Pain Point**: "I don't have time to negotiate with OpenAI for an enterprise tier. We just put 12 ChatGPT Plus accounts on my personal Amex. It's a mess for accounting, but it's the fastest way."
 - **Attempted Solutions**: Reached out to OpenAI sales; never heard back because they are too small.
 - **Credex Reaction**: Loved the "Syndicate/Wholesale" idea. "If you can pool me with other startups to get me the enterprise admin dashboard and a 10% discount, I'll sign up today."
+

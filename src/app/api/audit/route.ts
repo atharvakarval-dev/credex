@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+ï»¿import { NextResponse } from "next/server";
 import { auditInputSchema } from "../../../lib/validations";
 import { auditRateLimit } from "../../../lib/rate-limit";
 import { runAudit } from "../../../lib/audit-engine";
@@ -7,7 +7,7 @@ import { AuditSchema } from "../../../entities/AuditSchema";
 import { Audit } from "../../../entities/Audit";
 import { generateId } from "../../../lib/utils";
 
-// POST /api/audit — validates input, runs pure engine, persists to DB, returns auditId
+// POST /api/audit - validates input, runs pure engine, persists to DB, returns auditId
 export async function POST(request: Request) {
   try {
     // 1. Rate Limiting

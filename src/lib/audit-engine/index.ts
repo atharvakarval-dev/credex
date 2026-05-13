@@ -1,4 +1,4 @@
-import { AuditInput, AuditResult, ToolRecommendation } from "../../types/audit";
+﻿import { AuditInput, AuditResult, ToolRecommendation } from "../../types/audit";
 import { ALL_RULES } from "./rules";
 
 export function runAudit(
@@ -95,3 +95,4 @@ export function runAudit(
     generatedAt: new Date().toISOString(),
   };
 }
+

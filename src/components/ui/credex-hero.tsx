@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -127,3 +127,4 @@ const CredexHero = () => {
 };
 
 export { CredexHero };
+

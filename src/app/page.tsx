@@ -1,4 +1,4 @@
-// Landing page: premium dark SaaS design with Framer Motion scroll animations
+﻿// Landing page: premium dark SaaS design with Framer Motion scroll animations
 "use client";
 
 import { CredexHero } from "../components/ui/credex-hero";
@@ -199,4 +199,5 @@ export default function Home() {
     </div>
   );
 }
+
 

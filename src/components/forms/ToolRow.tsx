@@ -86,7 +86,7 @@ export function ToolRow({ index, form, onRemove, canRemove }: ToolRowProps) {
       <div className="w-full lg:w-[180px] shrink-0">
         <Select 
           value={toolId} 
-          onValueChange={(val) => setValue(`tools.${index}.toolId`, val as ToolId, { shouldValidate: true })}
+          onValueChange={(val) => setValue(`tools.${index}.toolId`, (val || "cursor") as ToolId, { shouldValidate: true })}
         >
           <SelectTrigger 
             className="h-12 bg-white/5 border-white/10 rounded-xl px-4 text-xs font-bold text-[#E1E0CC] hover:bg-white/10 transition-all"
@@ -109,7 +109,7 @@ export function ToolRow({ index, form, onRemove, canRemove }: ToolRowProps) {
       <div className="w-full lg:w-[160px] shrink-0">
         <Select 
           value={currentPlan} 
-          onValueChange={(val) => setValue(`tools.${index}.plan`, val as AnyPlan, { shouldValidate: true })}
+          onValueChange={(val) => setValue(`tools.${index}.plan`, (val || "pro") as AnyPlan, { shouldValidate: true })}
         >
           <SelectTrigger 
             className="h-12 bg-white/5 border-white/10 rounded-xl px-4 text-xs font-bold text-[#E1E0CC] hover:bg-white/10 transition-all"
@@ -175,3 +175,4 @@ export function ToolRow({ index, form, onRemove, canRemove }: ToolRowProps) {
     </div>
   );
 }
+

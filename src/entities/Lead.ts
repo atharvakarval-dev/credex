@@ -22,6 +22,9 @@ export class Lead {
   email!: string;
 
   @Column({ nullable: true })
+  name?: string;
+
+  @Column({ nullable: true })
   companyName?: string;
 
   @Column({ nullable: true })
@@ -41,3 +44,4 @@ export class Lead {
   @Column({ default: false })
   consultationBooked!: boolean;
 }
+

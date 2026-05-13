@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Link2, Check } from "lucide-react";
@@ -26,3 +26,4 @@ export function ShareButton() {
     </Button>
   );
 }
+

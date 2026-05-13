@@ -1,4 +1,4 @@
-import { z } from "zod";
+﻿import { z } from "zod";
 import { UseCase, ToolId, AnyPlan } from "../types/audit";
 
 // We define the literal values based on the types to validate the incoming string
@@ -45,3 +45,4 @@ export const auditInputSchema = z.object({
 
 // Used for parsing API responses or checking
 export type ValidatedAuditInput = z.infer<typeof auditInputSchema>;
+

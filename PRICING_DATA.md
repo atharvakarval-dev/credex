@@ -1,4 +1,4 @@
-# AI Spend Audit: Pricing Data & Citations
+﻿# AI Spend Audit: Pricing Data & Citations
 
 This document serves as the source of truth for the baseline pricing metrics used in our rules engine (`src/lib/audit-engine/pricing.ts`). All figures are based on publicly available vendor pricing pages as of Q1 2026.
 
@@ -26,3 +26,4 @@ This document serves as the source of truth for the baseline pricing metrics use
 ## Calculation Assumptions
 - **Annualization**: Monthly costs are multiplied by 12 to calculate `totalAnnualSavings` in the engine.
 - **Overhead Multiplier**: We do *not* factor in management overhead time to these specific pricing numbers; they represent hard license costs only.
+

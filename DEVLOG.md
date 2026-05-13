@@ -1,4 +1,4 @@
-# Credex DEVLOG
+﻿# Credex DEVLOG
 
 ## Day 1: Foundation
 * **Date**: May 1, 2026
@@ -36,3 +36,4 @@
 * **Details**: Completed final build verifications (`npm run build`, `eslint`). Wrote the `REFLECTION.md`. Ensured all UI states degrade gracefully if API keys are missing. Submitted the project.
 
 <!-- Last updated: Day 6 documentation sprint -->
+

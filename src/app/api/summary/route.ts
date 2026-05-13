@@ -1,4 +1,4 @@
-import { summaryRateLimit } from "../../../lib/rate-limit";
+﻿import { summaryRateLimit } from "../../../lib/rate-limit";
 import { getDataSource } from "../../../lib/db";
 import { AuditSchema } from "../../../entities/AuditSchema";
 import { createOpenAI } from "@ai-sdk/openai";
@@ -72,3 +72,4 @@ export async function POST(req: Request) {
     );
   }
 }
+

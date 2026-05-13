@@ -1,11 +1,11 @@
-import { ToolId } from "../../types/audit";
+﻿import { ToolId } from "../../types/audit";
 
 export const PRICING = {
   cursor: {
     hobby: { monthly: 0, annual: 0 },
     pro: { monthly: 20, annual: 192 }, // $16/mo billed annually
     business: { monthly: 40, annual: 384 },
-    enterprise: { monthly: null, annual: null }, // Custom — flag for manual review
+    enterprise: { monthly: null, annual: null }, // Custom â€” flag for manual review
   },
   github_copilot: {
     individual: { monthly: 10, annual: 100 },
@@ -38,7 +38,7 @@ export const PRICING = {
   },
 } as const;
 
-// Functional overlap matrix — used by consolidation rule
+// Functional overlap matrix â€” used by consolidation rule
 // 1.0 = identical use case, 0.0 = no overlap
 export const TOOL_OVERLAP: Record<ToolId, Partial<Record<ToolId, number>>> = {
   cursor: { windsurf: 0.95, github_copilot: 0.75 },
@@ -50,3 +50,4 @@ export const TOOL_OVERLAP: Record<ToolId, Partial<Record<ToolId, number>>> = {
   anthropic_api: { openai_api: 0.80 },
   openai_api: { anthropic_api: 0.80 },
 };
+

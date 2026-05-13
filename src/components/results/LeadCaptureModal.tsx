@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { toast } from "sonner";
@@ -124,3 +124,4 @@ export function LeadCaptureModal({ auditId, isOpen, onOpenChange, onSuccess }: L
     </Dialog>
   );
 }
+

@@ -1,4 +1,4 @@
-# Vercel AI SDK Integration: System Prompts
+﻿# Vercel AI SDK Integration: System Prompts
 
 This document contains the prompt structure used by our streaming AI backend (`src/app/api/summary/route.ts`).
 
@@ -26,3 +26,4 @@ If the `OPENAI_API_KEY` is not present in the environment (e.g., during local de
 
 ## Why Zero-Shot?
 Because the `AuditEngine` has already done the deterministic mathematical heavy lifting (calculating exact `totalAnnualSavings` and identifying specific `ToolRecommendation` objects), the LLM does not need to perform complex logic. It only needs to format the pre-computed JSON into an authoritative executive summary. Therefore, a zero-shot prompt with strict formatting rules yields the highest reliability and lowest latency.
+

@@ -1,4 +1,4 @@
-import { Ratelimit } from "@upstash/ratelimit";
+﻿import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
 // Graceful fallback if Redis isn't configured during local dev
@@ -44,3 +44,4 @@ export const summaryRateLimit = redisClient
       prefix: "@upstash/ratelimit/summary",
     })
   : null;
+

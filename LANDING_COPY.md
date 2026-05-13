@@ -1,4 +1,4 @@
-# Credex: Landing Page Copy Breakdown
+﻿# Credex: Landing Page Copy Breakdown
 
 This document outlines the rationale behind the specific copywriting choices made on the Credex Landing Page (`src/app/page.tsx`).
 
@@ -36,16 +36,17 @@ The trust bar displays logos/wordmarks of well-known companies (Linear, Vercel, 
 ## FAQs
 
 **Q: Is the audit really free?**
-A: Yes, completely. There are no credit cards, no trials, and no limits. The audit is our core product — we monetize through the execution service and wholesale syndicate, not by gating the diagnostic.
+A: Yes, completely. There are no credit cards, no trials, and no limits. The audit is our core product â€” we monetize through the execution service and wholesale syndicate, not by gating the diagnostic.
 
 **Q: How accurate are the savings estimates?**
-A: The savings engine is entirely deterministic — it uses verified, cited pricing data (see `PRICING_DATA.md`) and applies rule-based logic, not AI. You will never see a hallucinated number. The only variable is the monthly spend you report, so accuracy depends on how precisely you enter your actual invoiced amounts.
+A: The savings engine is entirely deterministic â€” it uses verified, cited pricing data (see `PRICING_DATA.md`) and applies rule-based logic, not AI. You will never see a hallucinated number. The only variable is the monthly spend you report, so accuracy depends on how precisely you enter your actual invoiced amounts.
 
 **Q: Which tools do you support?**
-A: Currently: Cursor, GitHub Copilot, Claude, ChatGPT, Gemini, Windsurf, Anthropic API, and OpenAI API. We add tools based on what users submit most frequently — the list is updated monthly.
+A: Currently: Cursor, GitHub Copilot, Claude, ChatGPT, Gemini, Windsurf, Anthropic API, and OpenAI API. We add tools based on what users submit most frequently â€” the list is updated monthly.
 
 **Q: What happens to my data after the audit?**
 A: Your tool names, seat counts, and spend figures are stored against a unique audit ID and used only to generate your results and (if you opt in) send your playbook via email. We never sell this data. Your email is optional and only used to send you the one-time playbook report.
 
 **Q: What happens after the audit? Do I have to do anything?**
 A: Nothing is automatic. The audit generates a prioritized action list. You can implement the recommendations yourself for free, or you can engage Credex to execute them for you (our "Done For You" service, priced at 20% of Year 1 savings). There is no obligation.
+

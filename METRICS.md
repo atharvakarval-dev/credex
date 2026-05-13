@@ -1,4 +1,4 @@
-# Credex Key Performance Indicators (Metrics)
+﻿# Credex Key Performance Indicators (Metrics)
 
 ## 0. North Star Metric
 
@@ -8,7 +8,7 @@ This is the single number that best captures whether the product is delivering v
 
 - **Target (Week 1)**: 100 audits/week
 - **Target (Month 3)**: 1,000 audits/week
-- **Leading indicator**: Landing page → Audit page CTR (target > 20%)
+- **Leading indicator**: Landing page â†’ Audit page CTR (target > 20%)
 
 ---
 
@@ -37,7 +37,7 @@ This is the single number that best captures whether the product is delivering v
 
 ## 4. Instrumentation Plan
 
-**Analytics Platform**: [PostHog](https://posthog.com) — open-source, self-hostable, free tier covers MVP volume.
+**Analytics Platform**: [PostHog](https://posthog.com) â€” open-source, self-hostable, free tier covers MVP volume.
 
 **Events to Track**:
 
@@ -53,7 +53,8 @@ This is the single number that best captures whether the product is delivering v
 | `cta_clicked` | CredexCTA "Book a Call" clicked | `{ audit_id, total_annual_savings }` |
 
 **Funnels to Monitor**:
-1. Landing → Audit Form → Submission → Results → Lead Capture
-2. Results → Share → (new session via OG link) → Audit Start
+1. Landing â†’ Audit Form â†’ Submission â†’ Results â†’ Lead Capture
+2. Results â†’ Share â†’ (new session via OG link) â†’ Audit Start
 
 **Dashboards**: Weekly North Star trend, cohort lead capture rate, top referral sources by audit volume.
+

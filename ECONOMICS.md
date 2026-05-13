@@ -1,4 +1,4 @@
-# Credex Unit Economics & Monetization
+﻿# Credex Unit Economics & Monetization
 
 ## 1. Pricing Model
 Credex operates on a **Shared Savings / Gainshare Model** combined with a freemium SaaS tier.
@@ -28,3 +28,4 @@ Credex operates on a **Shared Savings / Gainshare Model** combined with a freemi
 ## 3. Key Risks
 - **Vendor Consolidation**: If Microsoft or Google successfully bundles all AI tools natively into their suites, the standalone AI tool market (and thus the waste) may shrink.
 - **API Changes**: Dependence on vendor APIs to programmatically cancel/provision seats.
+

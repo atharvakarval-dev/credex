@@ -1,4 +1,4 @@
-# Credex Audit: Intelligence Suite
+﻿# Credex Audit: Intelligence Suite
 
 A free web application that helps startups audit their AI tool spend, identify redundant subscriptions, and reclaim wasted capital. Built as a lead-generation engine for Credex, surfacing real savings opportunities and facilitating high-value consultations.
 
@@ -45,3 +45,4 @@ npm test
 ![Audit Form](public/screenshots/audit.png)
 ![Lead Capture](public/screenshots/lead.png)
 ![Audit Results](public/screenshots/results.png)
+

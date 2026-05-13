@@ -1,4 +1,4 @@
-import { EntitySchema } from "typeorm";
+﻿import { EntitySchema } from "typeorm";
 import { Lead } from "./Lead";
 
 export const LeadSchema = new EntitySchema<Lead>({
@@ -55,3 +55,4 @@ export const LeadSchema = new EntitySchema<Lead>({
     },
   },
 });
+

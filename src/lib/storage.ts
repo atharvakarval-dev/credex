@@ -1,10 +1,10 @@
-import { AuditInput } from "../types/audit";
+﻿import { AuditInput } from "../types/audit";
 
 const STORAGE_KEY = "credex_audit_form_v1";
 
 interface PersistedFormState {
   version: 1; // Bump on breaking schema changes
-  lastUpdated: string; // ISO timestamp — expire after 7 days
+  lastUpdated: string; // ISO timestamp â€” expire after 7 days
   auditInput: Partial<AuditInput>;
 }
 
@@ -23,7 +23,7 @@ export function saveFormState(input: Partial<AuditInput>): void {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch (_error) {
     console.error("Failed to save form state to localStorage", _error);
-    // Silent fail — localStorage can throw in private browsing/storage full
+    // Silent fail â€” localStorage can throw in private browsing/storage full
   }
 }
 
@@ -71,3 +71,4 @@ export function clearFormState(): void {
     // Silent fail
   }
 }
+

@@ -1,8 +1,8 @@
-import { describe, test, expect } from "vitest";
+﻿import { describe, test, expect } from "vitest";
 import { runAudit } from "../index";
 import { AuditInput, ToolRecommendation } from "../../../types/audit";
 
-describe("Audit Engine — Core Invariants", () => {
+describe("Audit Engine â€” Core Invariants", () => {
   test("Team plan for 2 users flags right-sizing recommendation", () => {
     // Input: Claude Team plan, 2 seats, $60/mo
     const input: AuditInput = {
@@ -129,3 +129,4 @@ describe("Audit Engine — Core Invariants", () => {
     expect(result.totalAnnualSavings).toBe(result.totalMonthlySavings * 12);
   });
 });
+

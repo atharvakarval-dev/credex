@@ -1,4 +1,4 @@
-# Automated Tests
+﻿# Automated Tests
 
 This project uses **Vitest** for unit testing the core deterministic audit engine.
 
@@ -22,3 +22,4 @@ npm test
 ### CI/CD
 Tests are automatically executed on every push to the `main` branch via GitHub Actions.
 **Workflow**: `.github/workflows/ci.yml`
+

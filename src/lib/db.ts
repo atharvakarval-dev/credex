@@ -1,4 +1,4 @@
-import "reflect-metadata";
+﻿import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { AuditSchema } from "../entities/AuditSchema";
 import { LeadSchema } from "../entities/LeadSchema";
@@ -41,3 +41,4 @@ export const getDataSource = async () => {
     throw new Error("DATABASE_CONNECTION_ERROR: Please verify your Neon PostgreSQL connection in .env.local.");
   }
 };
+

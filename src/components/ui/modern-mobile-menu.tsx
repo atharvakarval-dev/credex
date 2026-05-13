@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -115,3 +115,4 @@ const Cursor = ({ position }: { position: any }) => {
 };
 
 export { InteractiveMenu };
+
