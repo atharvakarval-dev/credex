@@ -143,7 +143,7 @@ export function evaluateBillingFrequency(
   _context: AuditContext
 ): Partial<ToolRecommendation> | null {
   // Most tools have annual plans. If spend is > $10, it's worth flagging.
-  if (entry.monthlySpend > 10) {
+  if (entry.monthlySpend > 10 && entry.seats > 1) {
     const annualProjectedMonthly = entry.monthlySpend * 0.8; // Assume 20% discount
     return {
       recommendationType: "use_credits", 
@@ -189,3 +189,4 @@ export const ALL_RULES: AuditRule[] = [
   evaluateBillingFrequency,
   evaluateSeatCleanup, // New aggressive rule
 ];
+
